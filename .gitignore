@@ -9,6 +9,8 @@ Makefile
 moc_*.cpp
 *_autogen/
 
+#cahced files
+.cache/
 # macOS
 .DS_Store
 

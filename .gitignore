@@ -1,0 +1,23 @@
+# build outputs
+build/
+
+# Qt / CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+moc_*.cpp
+*_autogen/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Profiles (local data)
+profiles/

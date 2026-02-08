@@ -1,5 +1,0 @@
-/Users/jeffrey/workspace/sshterminal/build/CMakeFiles/sshterminal.dir
-/Users/jeffrey/workspace/sshterminal/build/CMakeFiles/edit_cache.dir
-/Users/jeffrey/workspace/sshterminal/build/CMakeFiles/rebuild_cache.dir
-/Users/jeffrey/workspace/sshterminal/build/CMakeFiles/sshterminal_autogen_timestamp_deps.dir
-/Users/jeffrey/workspace/sshterminal/build/CMakeFiles/sshterminal_autogen.dir

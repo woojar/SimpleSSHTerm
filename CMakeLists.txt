@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(sshterminal LANGUAGES CXX)
+project(SimpleSSHTerm LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -32,7 +32,7 @@ if (NOT LIBVTERM_FOUND)
   endif()
 endif()
 
-add_executable(sshterminal
+add_executable(SimpleSSHTerm
   src/main.cpp
   src/MainWindow.cpp
   src/TerminalTab.cpp
@@ -50,34 +50,34 @@ add_executable(sshterminal
   include/ThemeDialog.h
 )
 
-target_include_directories(sshterminal PRIVATE include)
+target_include_directories(SimpleSSHTerm PRIVATE include)
 
 if (LIBSSH_FOUND)
-  target_include_directories(sshterminal PRIVATE ${LIBSSH_INCLUDE_DIRS})
-  target_link_directories(sshterminal PRIVATE ${LIBSSH_LIBRARY_DIRS})
-  target_link_libraries(sshterminal PRIVATE ${LIBSSH_LIBRARIES})
-  target_compile_definitions(sshterminal PRIVATE HAVE_LIBSSH=1)
+  target_include_directories(SimpleSSHTerm PRIVATE ${LIBSSH_INCLUDE_DIRS})
+  target_link_directories(SimpleSSHTerm PRIVATE ${LIBSSH_LIBRARY_DIRS})
+  target_link_libraries(SimpleSSHTerm PRIVATE ${LIBSSH_LIBRARIES})
+  target_compile_definitions(SimpleSSHTerm PRIVATE HAVE_LIBSSH=1)
 endif()
 
 if (SODIUM_FOUND)
-  target_include_directories(sshterminal PRIVATE ${SODIUM_INCLUDE_DIRS})
-  target_link_directories(sshterminal PRIVATE ${SODIUM_LIBRARY_DIRS})
-  target_link_libraries(sshterminal PRIVATE ${SODIUM_LIBRARIES})
-  target_compile_definitions(sshterminal PRIVATE HAVE_SODIUM=1)
+  target_include_directories(SimpleSSHTerm PRIVATE ${SODIUM_INCLUDE_DIRS})
+  target_link_directories(SimpleSSHTerm PRIVATE ${SODIUM_LIBRARY_DIRS})
+  target_link_libraries(SimpleSSHTerm PRIVATE ${SODIUM_LIBRARIES})
+  target_compile_definitions(SimpleSSHTerm PRIVATE HAVE_SODIUM=1)
 endif()
 
 if (LIBVTERM_FOUND)
-  target_include_directories(sshterminal PRIVATE ${LIBVTERM_INCLUDE_DIRS})
-  target_link_directories(sshterminal PRIVATE ${LIBVTERM_LIBRARY_DIRS})
-  target_link_libraries(sshterminal PRIVATE ${LIBVTERM_LIBRARIES})
-  target_compile_definitions(sshterminal PRIVATE HAVE_LIBVTERM=1)
+  target_include_directories(SimpleSSHTerm PRIVATE ${LIBVTERM_INCLUDE_DIRS})
+  target_link_directories(SimpleSSHTerm PRIVATE ${LIBVTERM_LIBRARY_DIRS})
+  target_link_libraries(SimpleSSHTerm PRIVATE ${LIBVTERM_LIBRARIES})
+  target_compile_definitions(SimpleSSHTerm PRIVATE HAVE_LIBVTERM=1)
 endif()
 
-target_link_libraries(sshterminal PRIVATE Qt5::Widgets)
+target_link_libraries(SimpleSSHTerm PRIVATE Qt5::Widgets)
 
 # Better warnings for dev
 if (MSVC)
-  target_compile_options(sshterminal PRIVATE /W4)
+  target_compile_options(SimpleSSHTerm PRIVATE /W4)
 else()
-  target_compile_options(sshterminal PRIVATE -Wall -Wextra -Wpedantic)
+  target_compile_options(SimpleSSHTerm PRIVATE -Wall -Wextra -Wpedantic)
 endif()

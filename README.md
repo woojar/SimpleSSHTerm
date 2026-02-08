@@ -21,7 +21,7 @@ cmake --build build
 Run:
 
 ```bash
-./build/sshterminal
+./build/SimpleSSHTerm
 ```
 
 ## Notes
